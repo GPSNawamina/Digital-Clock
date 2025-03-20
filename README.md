@@ -44,7 +44,6 @@ My **Digital Clock** is a modern and stylish digital clock that displays the cur
 ### **Dark Mode:**
 ![Dark Mode](./screenshot-dark.png)
 
-*(Make sure to replace `screenshot-light.png` and `screenshot-dark.png` with actual image file names in your repository.)*
 
 ---
 

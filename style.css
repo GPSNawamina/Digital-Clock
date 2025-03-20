@@ -1,0 +1,178 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.5s ease;
+    position: relative;
+}
+
+/* Clock Container */
+.clock-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 40px;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.5s ease;
+}
+
+/* Weekdays Container on the Left */
+.week {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    padding-right: 20px;
+    border-right: 3px solid #fff;
+}
+
+/* Each Day */
+.day {
+    font-size: 30px;
+    color: #aaa;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+}
+
+.day:hover {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Active Day Styling */
+.day.active {
+    color: #ffeb3b;
+    font-weight: bold;
+}
+
+/* Time Display */
+.time {
+    font-size: 150px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 5px;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+    display: flex;
+    gap: 10px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1c1c1c;
+}
+
+.clock-container.dark-mode {
+    background-color: #333;
+}
+
+.time.dark-mode {
+    color: #eaeaea;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.day.dark-mode {
+    color: #ccc;
+}
+
+.day.dark-mode:hover {
+    color: #fff;
+}
+
+.day.active.dark-mode {
+    color: #ffeb3b;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #f4f4f4;
+}
+
+.clock-container.light-mode {
+    background-color: #fff;
+}
+
+.time.light-mode {
+    color: #333;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.day.light-mode {
+    color: #666;
+}
+
+.day.light-mode:hover {
+    color: #333;
+}
+
+.day.active.light-mode {
+    color: #ffeb3b;
+}
+
+/* Button Styling (from user input) */
+.button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #000000;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #000000;
+  position: fixed; /* Fixed position */
+  bottom: 20px; /* Bottom position */
+  right: 20px; /* Right position */
+  z-index: 10; /* Ensure it's on top of other elements */
+}
+
+button:hover {
+  color: #000000;
+  transform: scale(1.1);
+  outline: 2px solid #ffff00;
+  box-shadow: 4px 5px 17px -4px #ffff00;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ffff00;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+button:hover::before {
+  width: 250%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .time {
+        font-size: 100px;
+    }
+
+    .week {
+        gap: 5px;
+    }
+
+    .day {
+        font-size: 20px;
+    }
+}
